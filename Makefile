@@ -1,4 +1,4 @@
-CFLAGS = -std=c2x -Wall -Wextra
+CFLAGS = -Wall -Wextra
 
 all: pcpclient
 

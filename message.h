@@ -15,18 +15,18 @@
 #define LEN_OPTION_BODY_PREFER_FAILURE 0
 #define LEN_OPTION_BODY_FILTER 20
 
-enum ProtoVersion: uint8_t {
+enum ProtoVersion {
   NAT_PMP_VERSIOIN = 0,
   PCP_VERSION = 2,
 };
 
-enum OpCode: uint8_t {
+enum OpCode {
   OPCODE_ANNOUNCE = 0,
   OPCODE_MAP = 1,
   OPCODE_PEER = 2,
 };
 
-enum ResultCode: uint8_t {
+enum ResultCode {
   RC_SUCCESS = 0,
   RC_UNSUPP_VERSION = 1,
   RC_NOT_AUTHORIZED = 2,
@@ -43,7 +43,7 @@ enum ResultCode: uint8_t {
   RC_EXCESSIVE_REMOTE_PEERS = 13,
 };
 
-enum Option: uint8_t {
+enum Option {
   OPTION_THIRD_PARTY = 1,
   OPTION_PREFER_FAILURE = 2,
   OPTION_FILTER = 3,

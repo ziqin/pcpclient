@@ -1,6 +1,7 @@
 #ifndef PCP_CLIENT_H
 #define PCP_CLIENT_H
 
+#include <stdbool.h>
 #include <stdint.h>
 #include <sys/socket.h>
 
