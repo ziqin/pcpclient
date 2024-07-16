@@ -49,13 +49,6 @@ enum Option {
   OPTION_FILTER = 3,
 };
 
-enum ReadErr {
-  RE_INVALID_LENGTH = 1,
-  RE_UNSUPP_VERSION = 2,
-  RE_NOT_REQUEST = 3,
-  RE_NOT_RESPONSE = 4,
-};
-
 /*
  *    0                   1                   2                   3
  *    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
@@ -81,7 +74,6 @@ enum ReadErr {
 struct ReqHdr {
   uint8_t version;
   uint8_t opcode;
-  // uint8_t _reserved[2];
   uint32_t requested_lifetime;
   struct in6_addr client_ip;
 };
@@ -110,11 +102,9 @@ struct ReqHdr {
 struct RespHdr {
   uint8_t version;
   uint8_t r_opcode;
-  // uint8_t _reserved_1;
   uint8_t result_code;
   uint32_t lifetime;
   uint32_t epoch_time;
-  // uint8_t _reserved_2[12];
 };
 
 struct Nonce {
@@ -142,7 +132,6 @@ struct Nonce {
 struct MapInfo {
   struct Nonce mapping_nonce;
   uint8_t protocol;
-  // uint8_t _reserved[3];
   uint16_t internal_port;
   uint16_t external_port;
   struct in6_addr external_ip;
@@ -176,12 +165,10 @@ struct MapInfo {
 struct PeerInfo {
   struct Nonce mapping_nonce;
   uint8_t protocol;
-  // uint8_t _reserved_1[3];
   uint16_t internal_port;
   uint16_t external_port;
   struct in6_addr external_ip;
   uint16_t peer_port;
-  // uint8_t _reserved_2[2];
   struct in6_addr peer_ip;
 };
 
@@ -196,7 +183,6 @@ struct PeerInfo {
  */
 struct OptionHdr {
   uint8_t code;
-  // uint8_t _reserved;
   uint16_t length;
 };
 
@@ -244,7 +230,6 @@ struct PreferFailureOption {
  */
 struct FilterOption {
   struct OptionHdr hdr;
-  // uint8_t _reserved;
   uint8_t prefix_length;
   uint16_t peer_port;
   struct in6_addr peer_ip;

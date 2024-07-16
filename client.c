@@ -86,7 +86,6 @@ static void RecvMapResp(int sock_fd, struct Nonce nonce) {
          resp_hdr.lifetime, resp_hdr.epoch_time);
 
   struct MapInfo map_info;
-  memset(&map_info, 0, sizeof(map_info));
   cur = ReadMapInfo(cur, sizeof(buf) - (cur - buf), &map_info);
   if (cur == NULL) {
     errx(EXIT_FAILURE, "Invalid map response specific data");
@@ -105,9 +104,9 @@ static void RecvMapResp(int sock_fd, struct Nonce nonce) {
     inet_ntop(AF_INET, &ipv4, str, sizeof(str));
     printf("External IP: %s\n", str);
   } else {
-    char ipv6_str[INET6_ADDRSTRLEN];
-    inet_ntop(AF_INET6, &map_info.external_ip, ipv6_str, sizeof(ipv6_str));
-    printf("External IP: %s\n", ipv6_str);
+    char str[INET6_ADDRSTRLEN];
+    inet_ntop(AF_INET6, &map_info.external_ip, str, sizeof(str));
+    printf("External IP: %s\n", str);
   }
 }
 
