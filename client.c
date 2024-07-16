@@ -31,7 +31,7 @@ static ssize_t SendMapReq(int sock_fd,
     .protocol = protocol,
     .internal_port = port,
     .external_port = port,
-    .external_ip = FixedSizeAddr(client_addr),
+    .external_ip = SuggestedExternalAddr(client_addr),
   };
 
   unsigned char buf[LEN_MAX_PAYLOAD], *cur;
