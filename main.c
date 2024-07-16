@@ -18,8 +18,8 @@
 
 static void usage(FILE* f) {
   fprintf(f, "Usage:\n"
-      "\tpcpclientd -s <server_address> -l <local_address> -p <port>\n"
-      "\t           [-t | -u] [-d <timeout>]\n");
+      "\tpcpclient -s <server_address> -l <local_address> -p <port>\n"
+      "\t          [-t | -u] [-d <timeout>]\n");
 }
 
 int main(int argc, char *argv[]) {
