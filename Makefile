@@ -18,4 +18,4 @@ network.o: network.c network.h
 .PHONY: clean
 
 clean:
-	$(RM) *.o pcpclientd
+	$(RM) *.o pcpclient
