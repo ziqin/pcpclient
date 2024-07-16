@@ -1,5 +1,5 @@
 # Executables
-pcpclientd
+pcpclient
 *.out
 *.exe
 
